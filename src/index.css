@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-deep-forest: #101B17;
+    --bg-dark-green: #172720;
+    --bg-secondary-green: #263B30;
+    --text-light-natural: #E7E9D8;
+    --text-sage-green: #8AA78C;
+    --text-sand: #C8B995;
+    --accent-gold: #D5AE64;
+    --status-warning: #E7A34F;
+    --status-danger: #D76D61;
+  }
+
+  body {
+    font-family: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+    background-color: #101B17;
+    color: #E7E9D8;
+    letter-spacing: 0.01em;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: 'Rubik', 'IBM Plex Sans', sans-serif;
+    text-wrap: balance;
+  }
+
+  .font-mono,
+  .tabular-nums {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Custom subtle scrollbars */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #101B17;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #263B30;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #365243;
+}
+
+@keyframes subtle-drift {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+.resident-bob {
+  animation: subtle-drift 2.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .resident-bob {
+    animation: none;
+  }
+}
